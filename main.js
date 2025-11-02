@@ -1,43 +1,39 @@
-// Safi Seaside Tours - Main JavaScript File
-// This file can handle basic interactivity (e.g., mobile menu, smooth scroll, etc.)
+// main.js - Smooth scroll, fade-in, mobile nav toggle
+console.log('Safi Seaside Tours scripts loaded');
 
-console.log('✅ Safi Seaside Tours site loaded successfully');
+// Smooth scroll for same-page anchors
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
 
-// Example: simple mobile navigation toggle (optional)
-const menuButton = document.querySelector('.menu-btn');
-const nav = document.querySelector('.nav');
+// Fade-in animation
+const faders=document.querySelectorAll('.fade-in');
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.2});
+  faders.forEach(f=>obs.observe(f));
+}else{faders.forEach(f=>f.classList.add('visible'));}
 
-if (menuButton && nav) {
-  menuButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
+// Mobile menu toggle
+const menuBtn=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav');
+if(menuBtn&&nav){
+  menuBtn.addEventListener('click',()=>{
+    const showing=nav.style.display==='flex';
+    nav.style.display=showing?'none':'flex';
+    nav.style.flexDirection='column';
+    nav.style.alignItems='flex-start';
+    nav.style.gap='10px';
   });
 }
-// Smooth scroll for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-// Fade-in animation on scroll
-const faders = document.querySelectorAll('.fade-in');
 
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
 
