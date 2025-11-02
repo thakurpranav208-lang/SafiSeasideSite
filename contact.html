@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Safi Seaside Tours</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -17,37 +17,46 @@
           <p class="tag">Private Tours from Halifax</p>
         </div>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="tours.html">Tours</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="btn">Contact</a>
+        <a href="airport.html">Airport Transfers</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn active">Contact</a>
       </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Contact Us</h2>
-    <p>Phone: +1 (902) 402-7263 · Email: info@safiseasidetours.ca</p>
+  <main>
+    <section class="hero">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80" alt="Contact Safi Seaside Tours" class="hero-bg">
+      <div class="container hero-inner">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you — let’s plan your perfect Nova Scotia journey.</p>
+      </div>
+    </section>
 
-    <form action="mailto:info@safiseasidetours.ca" method="post" enctype="text/plain" class="contact-form">
-      <label>Name <input type="text" name="Name" required></label>
-      <label>Email <input type="email" name="Email" required></label>
-      <label>Message <textarea name="Message" rows="5" required></textarea></label>
-      <button type="submit" class="btn">Send</button>
-    </form>
-
-    <div class="map-embed">
-      <!-- You can replace with an iframe Google Map when live -->
-      <p>Map: Halifax, Nova Scotia</p>
-    </div>
+    <section class="container fade-in" style="margin:60px auto; text-align:center;">
+      <form class="contact-form" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="cta">Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Safi Seaside Tours</p>
+      <p>© 2025 Safi Seaside Tours — Halifax, Nova Scotia · <a href="contact.html">Contact</a></p>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

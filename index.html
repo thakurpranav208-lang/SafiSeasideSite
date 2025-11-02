@@ -3,78 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Safi Seaside Tours — Private Tours from Halifax</title>
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>Safi Seaside Tours — Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="logo.png" alt="logo" class="logo-img" />
+        <div class="logo">🌊</div>
         <div>
-          <h1 class="brand-title">Safi Seaside Tours</h1>
+          <h1>Safi Seaside Tours</h1>
           <p class="tag">Private Tours from Halifax</p>
         </div>
       </div>
 
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
-      <nav class="nav">
-        <a href="index.html">Home</a>
+      <nav class="nav" id="nav-menu">
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="tours.html">Tours</a>
         <a href="gallery.html">Gallery</a>
+        <a href="airport.html">Airport Transfers</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html" class="btn">Contact</a>
       </nav>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero fade-in">
-      <div class="container hero-inner">
-        <h2>Guiding Unforgettable Journeys</h2>
-        <p class="lead">Experience Nova Scotia's coastlines, lighthouses and coastal towns with a trusted local guide.</p>
-        <a href="tours.html" class="cta btn">Book Your Tour Today</a>
-      </div>
-    </section>
+    <section class="hero">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80');"></div>
+  <div class="container hero-inner fade-in">
+    <h2>Guiding Unforgettable Journeys</h2>
+    <p>Experience Nova Scotia's coastlines, lighthouses and coastal towns with a trusted local guide.</p>
+    <a href="tours.html" class="cta">Book Your Tour Today</a>
+  </div>
+</section>
 
-    <section class="features container">
-      <div class="card fade-in">
+
+    <section class="features container fade-in">
+      <div class="card">
         <h3>Top Tours</h3>
-        <p>Peggy's Cove · Lunenburg · Combo Tours</p>
+        <p>Peggy's Cove | Lunenburg | Combo Tours</p>
       </div>
-      <div class="card fade-in">
+      <div class="card">
         <h3>Why Choose Us</h3>
         <ul>
-          <li>15+ years guiding experience</li>
-          <li>Door-to-door pickup & comfortable SUVs</li>
-          <li>Local insight & complimentary lobster rolls</li>
+          <li>Experienced local guide (Asif Safi)</li>
+          <li>Door-to-door pickup & comfortable vehicles</li>
+          <li>Complimentary Nova Scotia Lobster Rolls</li>
         </ul>
       </div>
-      <div class="card fade-in">
+      <div class="card">
         <h3>Testimonials</h3>
         <p>"A fantastic day exploring Peggy's Cove — highly recommended!"</p>
       </div>
     </section>
 
-    <section class="preview-tours container fade-in" id="popular">
+    <section class="preview-tours container fade-in">
       <h2>Popular Tours</h2>
       <div class="tours-grid">
         <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60" alt="Peggy's Cove">
           <h4>Peggy's Cove Tour</h4>
           <p>Duration: 4–5 hours · Price: $160</p>
           <a href="tours.html#peggys" class="small-btn">More</a>
         </article>
-
         <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60" alt="Lunenburg">
           <h4>Lunenburg Tour</h4>
           <p>Duration: 4–5 hours · Price: $175</p>
           <a href="tours.html#lunenburg" class="small-btn">More</a>
         </article>
-
         <article class="tour-card">
+          <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=60" alt="Combo Tour">
           <h4>Combo Tour</h4>
           <p>Peggy's Cove + Lunenburg · Price: $200</p>
           <a href="tours.html#combo" class="small-btn">More</a>
@@ -83,12 +91,12 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer fade-in">
     <div class="container">
-      <p>© 2025 Safi Seaside Tours · Halifax, Nova Scotia · <a href="contact.html">Contact</a></p>
+      <p>© 2025 Safi Seaside Tours — Halifax, Nova Scotia · <a href="contact.html">Contact</a></p>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
